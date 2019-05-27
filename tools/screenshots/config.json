@@ -1,0 +1,13 @@
+{
+  "chromium_path": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+  "basic_username": "test1234",
+  "basic_password": "foo",
+  "viewport": [
+    { "width": 375, "device": "SP" },
+    { "width": 1280, "device": "PC" }
+  ],
+  "input_csv": "input.csv",
+  "output_folder": "output",
+  "output_filename": "{{name}}_{{device}}.jpg",
+  "file_type": "jpeg"
+}
