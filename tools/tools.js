@@ -3,42 +3,9 @@
 const commander = require("commander");
 
 // module
-const glob = require("./glob/glob.js");
 const shot = require("./screenshots/shot.js");
 const imgmin = require("./imgmin/imgmin.js");
 const htmlValidate = require("./html-validator/validator.js");
-
-// glob
-commander
-  .command("glob")
-  .description(
-    `ワイルドカードでファイルを検索します。(例: npm start -- glob -p "**/*.js,**/*.css" -i "node_modules")`
-  )
-  .option(
-    "-p --pattern <pattern>",
-    `ワイルドカードのパターン コンマ(,)で区切ることができます(例: "**/*.txt")`,
-    "*"
-  )
-  .option(
-    "-i --ignore <ignore>",
-    `ワイルドカードの除外するパターン コンマ(,)で区切ることができます(例: "**/*.html")`,
-    "node_modules"
-  )
-  .option(
-    "-r --root <root>",
-    `ファイルを探すルートディレクトリ(例: "C:/Users/Desktop/")`,
-    process.cwd().replace(/\\/g, "/") + "/"
-  )
-  .option(
-    "-n --name <name>",
-    "出力するファイル名(ファイルが作成されます)",
-    "filelist.txt"
-  )
-  .option("-o --output <output>", "出力するフォルダの場所", "output/")
-  .option("-a --absolute", "出力するパスを絶対パスにするオプション", false)
-  .action(cmd => {
-    glob(cmd);
-  });
 
 // shot
 commander
@@ -51,7 +18,7 @@ commander
     shot(cmd);
   });
 
-// img-min
+// imgmin
 commander
   .command("imgmin")
   .description(
@@ -59,13 +26,13 @@ commander
   )
   .option(
     "-r --root <root>",
-    `ファイルの入力元のディレクトリ(例: "input/")`,
-    "input/"
+    `ファイルの入力元のディレクトリ(例: "/input/")`,
+    "/input/"
   )
   .option(
     "-o --output <output>",
-    `ファイルの出力先のディレクトリ(例: "imgmin/")`,
-    "output/"
+    `ファイルの出力先のディレクトリ(例: "/output/")`,
+    "/output/"
   )
   .action(cmd => {
     imgmin(cmd);
@@ -80,8 +47,8 @@ commander
   )
   .option(
     "-p --pattern <pattern>",
-    `ファイルの入力元のディレクトリ ワイルドカードが使えます コンマ(,)で区切ることができます(例: "input/**/*.html,!**/includes")`,
-    "input/**/*.html,!**/includes"
+    `ファイルの入力元のディレクトリ ワイルドカードが使えます コンマ(,)で区切ることができます(例: "input/**/*.html")`,
+    "input/**/*.html"
   )
   .action(cmd => {
     htmlValidate(cmd);
