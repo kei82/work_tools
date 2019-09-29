@@ -13,7 +13,6 @@ commander
   .description(
     "input.csvを元にスクリーンショットを撮影します。設定ファイルはconfig.jsonです。(例: npm start -- shot)"
   )
-  .option("-c --config", "設定ファイルを表示して終了します", false)
   .action(cmd => {
     shot(cmd);
   });
