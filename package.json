@@ -9,7 +9,7 @@
     "csv-parse": "4.6.3",
     "fs-extra": "8.1.0",
     "glob": "7.1.4",
-    "html-validator": "4.1.1",
+    "html-validator": "5.0.0",
     "imagemin": "7.0.0",
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
