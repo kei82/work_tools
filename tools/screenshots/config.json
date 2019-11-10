@@ -3,7 +3,7 @@
   "basic_username": "test1234",
   "basic_password": "foo",
   "viewport": [
-    { "width": 375, "device": "SP" },
+    { "width": 411, "device": "SP", "emulate": "Pixel 2" },
     { "width": 1280, "device": "PC" }
   ],
   "input_csv": "input.csv",

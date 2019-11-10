@@ -8,7 +8,7 @@
     "commander": "4.0.0",
     "csv-parse": "4.6.5",
     "fs-extra": "8.1.0",
-    "glob": "7.1.5",
+    "glob": "7.1.6",
     "html-validator": "5.0.0",
     "imagemin": "7.0.0",
     "imagemin-mozjpeg": "8.0.0",

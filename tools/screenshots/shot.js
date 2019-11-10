@@ -1,6 +1,7 @@
 module.exports = async cmd => {
   const fs = require("fs-extra");
   const puppeteer = require("puppeteer-core");
+  const devices = require("puppeteer-core/DeviceDescriptors");
   const csvParse = require("csv-parse/lib/sync");
 
   const conf = fs.readJsonSync(__dirname + "/config.json"); // 設定ファイル読み込み
@@ -13,18 +14,16 @@ module.exports = async cmd => {
   );
   fs.mkdirsSync(conf.output_folder); // 出力フォルダ作成
 
-  const taskList = () =>
-    (function*() {
-      for (const target of pages) {
-        for (const viewport of conf.viewport) {
-          yield {
-            ...target,
-            ...viewport
-          };
-        }
+  const task = (function*() {
+    for (const target of pages) {
+      for (const viewport of conf.viewport) {
+        yield {
+          ...target,
+          ...viewport
+        };
       }
-    })();
-  const task = taskList();
+    }
+  })();
 
   const browser = await puppeteer.launch({
     executablePath: conf.chromium_path
@@ -36,7 +35,7 @@ module.exports = async cmd => {
     while (true) {
       const { value, done } = task.next();
       if (done) break;
-      const { url, filename, width, device } = value;
+      const { url, filename, width, device, emulate } = value;
 
       if (conf.basic_username && conf.basic_password) {
         await page.authenticate({
@@ -45,6 +44,7 @@ module.exports = async cmd => {
         });
       }
 
+      if (emulate) await page.emulate(devices[emulate]);
       await page.setViewport({ width, height: 1 });
 
       const response = await page.goto(url, {
