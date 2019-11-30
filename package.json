@@ -2,19 +2,24 @@
   "name": "work_tools",
   "version": "1.0.0",
   "scripts": {
-    "start": "node tools/tools.js"
+    "ga": "node tools/generate-ga-report/generate-ga-report.js",
+    "hv": "node tools/html-validator/html-validator.js",
+    "im": "node tools/imgmin/imgmin.js",
+    "ss": "node tools/screenshots/screenshots.js"
   },
   "devDependencies": {
-    "commander": "4.0.1",
     "csv-parse": "4.8.2",
+    "dayjs": "1.8.17",
+    "exceljs": "3.4.0",
     "fs-extra": "8.1.0",
     "glob": "7.1.6",
+    "googleapis": "45.0.0",
     "html-validator": "5.0.0",
     "imagemin": "7.0.1",
+    "imagemin-gifsicle": "6.0.1",
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.0.0",
-    "puppeteer-core": "2.0.0",
-    "readline-sync": "1.4.10"
+    "puppeteer-core": "2.0.0"
   }
 }

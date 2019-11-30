@@ -1,9 +1,9 @@
-module.exports = async cmd => {
-  const fs = require("fs-extra");
-  const puppeteer = require("puppeteer-core");
-  const devices = require("puppeteer-core/DeviceDescriptors");
-  const csvParse = require("csv-parse/lib/sync");
+const fs = require("fs-extra");
+const puppeteer = require("puppeteer-core");
+const devices = require("puppeteer-core/DeviceDescriptors");
+const csvParse = require("csv-parse/lib/sync");
 
+(async () => {
   const conf = fs.readJsonSync(__dirname + "/config.json"); // 設定ファイル読み込み
   const pages = csvParse(
     fs.readFileSync(__dirname + "/" + conf.input_csv), // CSVファイル読み込み
@@ -12,7 +12,7 @@ module.exports = async cmd => {
       skip_empty_lines: true
     }
   );
-  fs.mkdirsSync(conf.output_folder); // 出力フォルダ作成
+  fs.mkdirsSync(process.cwd() + "/" + conf.output_folder); // 出力フォルダ作成
 
   const task = (function*() {
     for (const target of pages) {
@@ -85,6 +85,7 @@ module.exports = async cmd => {
     .catch(error => {
       console.error(error);
     });
+  setTimeout(() => {}, 3000);
 
   await browser.close();
-};
+})();
