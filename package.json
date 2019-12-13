@@ -10,10 +10,10 @@
   "devDependencies": {
     "csv-parse": "4.8.2",
     "dayjs": "1.8.17",
-    "exceljs": "3.4.0",
+    "exceljs": "3.5.0",
     "fs-extra": "8.1.0",
     "glob": "7.1.6",
-    "googleapis": "45.0.0",
+    "googleapis": "46.0.0",
     "html-validator": "5.0.0",
     "imagemin": "7.0.1",
     "imagemin-gifsicle": "6.0.1",
