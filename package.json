@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "csv-parse": "4.8.2",
-    "dayjs": "1.8.17",
+    "dayjs": "1.8.18",
     "exceljs": "3.5.0",
     "fs-extra": "8.1.0",
     "glob": "7.1.6",
