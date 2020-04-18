@@ -13,13 +13,13 @@
     "exceljs": "3.8.2",
     "fs-extra": "9.0.0",
     "glob": "7.1.6",
-    "googleapis": "48.0.0",
-    "html-validator": "5.1.7",
+    "googleapis": "49.0.0",
+    "html-validator": "5.1.8",
     "imagemin": "7.0.1",
     "imagemin-gifsicle": "7.0.0",
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.1.0",
-    "puppeteer-core": "2.1.1"
+    "puppeteer-core": "3.0.0"
   }
 }
