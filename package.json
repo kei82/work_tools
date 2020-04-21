@@ -8,8 +8,8 @@
     "ss": "node tools/screenshots/screenshots.js"
   },
   "devDependencies": {
-    "csv-parse": "4.8.8",
-    "dayjs": "1.8.24",
+    "csv-parse": "4.8.9",
+    "dayjs": "1.8.25",
     "exceljs": "3.8.2",
     "fs-extra": "9.0.0",
     "glob": "7.1.6",
