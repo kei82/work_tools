@@ -8,9 +8,9 @@
     "ss": "node tools/screenshots/screenshots.js"
   },
   "devDependencies": {
-    "csv-parse": "4.8.9",
+    "csv-parse": "4.9.0",
     "dayjs": "1.8.25",
-    "exceljs": "3.8.2",
+    "exceljs": "3.9.0",
     "fs-extra": "9.0.0",
     "glob": "7.1.6",
     "googleapis": "49.0.0",
@@ -20,6 +20,6 @@
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.1.0",
-    "puppeteer-core": "3.0.0"
+    "puppeteer-core": "3.0.2"
   }
 }
