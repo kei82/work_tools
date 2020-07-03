@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "csv-parse": "4.10.1",
-    "dayjs": "1.8.28",
-    "exceljs": "4.0.1",
+    "dayjs": "1.8.29",
+    "exceljs": "4.1.0",
     "fs-extra": "9.0.1",
     "glob": "7.1.6",
     "googleapis": "52.1.0",
@@ -20,6 +20,6 @@
     "imagemin-mozjpeg": "9.0.0",
     "imagemin-pngquant": "9.0.0",
     "imagemin-svgo": "8.0.0",
-    "puppeteer-core": "4.0.1"
+    "puppeteer-core": "5.0.0"
   }
 }
