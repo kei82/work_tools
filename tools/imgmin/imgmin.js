@@ -14,53 +14,53 @@ const imageminSvgo = require("imagemin-svgo");
     use: [
       imageminMozjpeg({
         quality: 80,
-        progressive: true
+        progressive: true,
       }),
       imageminPngquant({
         quality: [0.8, 0.9],
         speed: 2,
-        strip: true
+        strip: true,
       }),
       imageminGifsicle({
         optimizationLevel: 1,
-        colors: 256
+        colors: 256,
       }),
       imageminSvgo({
         plugins: [
           {
             cleanupNumericValues: {
-              floatPrecision: 5
-            }
+              floatPrecision: 5,
+            },
           },
           {
             convertPathData: {
-              floatPrecision: 5
-            }
+              floatPrecision: 5,
+            },
           },
           {
             transformsWithOnePath: {
-              floatPrecision: 5
-            }
+              floatPrecision: 5,
+            },
           },
           {
             convertTransform: {
-              floatPrecision: 5
-            }
+              floatPrecision: 5,
+            },
           },
           {
             cleanupListOfValues: {
-              floatPrecision: 5
-            }
-          }
-        ]
-      })
-    ]
+              floatPrecision: 5,
+            },
+          },
+        ],
+      }),
+    ],
   };
 
   const fileList = glob.sync(pattern, {
     nodir: true,
     cwd: inputPath,
-    root: inputPath
+    root: inputPath,
   });
 
   if (!fileList.length) {

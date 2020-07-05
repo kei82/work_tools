@@ -8,7 +8,7 @@ const outputFile = outputFolder + "/html-validate.md";
 // レポート格納
 let errNum = 0;
 let result = "# html-validator\n\n";
-const writeValidate = async path => {
+const writeValidate = async (path) => {
   const fsData = fs.readFileSync(path);
   const validatData = await validator({ data: fsData });
 
@@ -25,8 +25,10 @@ const writeValidate = async path => {
 };
 
 // ファイル検索して関数実行
-const globAction = async func => {
-  const files = await glob.sync(process.cwd() + "/input/**/*.html", { nodir: true });
+const globAction = async (func) => {
+  const files = await glob.sync(process.cwd() + "/input/**/*.html", {
+    nodir: true,
+  });
   for (let file of files) {
     if (func) await func(file);
   }
