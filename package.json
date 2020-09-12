@@ -18,8 +18,8 @@
     "imagemin": "7.0.1",
     "imagemin-gifsicle": "7.0.0",
     "imagemin-mozjpeg": "9.0.0",
-    "imagemin-pngquant": "9.0.0",
+    "imagemin-pngquant": "9.0.1",
     "imagemin-svgo": "8.0.0",
-    "puppeteer-core": "5.2.1"
+    "puppeteer-core": "5.3.0"
   }
 }
