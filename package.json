@@ -8,12 +8,12 @@
     "screenshots": "node tools/screenshots/screenshots.js"
   },
   "devDependencies": {
-    "csv-parse": "4.14.1",
-    "dayjs": "1.9.6",
+    "csv-parse": "4.14.2",
+    "dayjs": "1.10.1",
     "exceljs": "4.2.0",
     "fs-extra": "9.0.1",
     "glob": "7.1.6",
-    "googleapis": "65.0.0",
+    "googleapis": "66.0.0",
     "html-validator": "5.1.17",
     "imagemin": "7.0.1",
     "imagemin-gifsicle": "7.0.0",
