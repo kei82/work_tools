@@ -8,18 +8,18 @@
     "screenshots": "node tools/screenshots/screenshots.js"
   },
   "devDependencies": {
-    "csv-parse": "4.14.2",
-    "dayjs": "1.10.1",
-    "exceljs": "4.2.0",
-    "fs-extra": "9.0.1",
+    "csv-parse": "4.15.4",
+    "dayjs": "1.10.4",
+    "exceljs": "4.2.1",
+    "fs-extra": "9.1.0",
     "glob": "7.1.6",
-    "googleapis": "66.0.0",
+    "googleapis": "71.0.0",
     "html-validator": "5.1.17",
     "imagemin": "7.0.1",
     "imagemin-gifsicle": "7.0.0",
     "imagemin-mozjpeg": "9.0.0",
-    "imagemin-pngquant": "9.0.1",
-    "imagemin-svgo": "8.0.0",
-    "puppeteer-core": "5.5.0"
+    "imagemin-pngquant": "9.0.2",
+    "imagemin-svgo": "9.0.0",
+    "puppeteer-core": "8.0.0"
   }
 }
