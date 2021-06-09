@@ -1,17 +1,17 @@
-const fs = require("fs-extra");
-const glob = require("glob");
-const imagemin = require("imagemin");
-const imageminMozjpeg = require("imagemin-mozjpeg");
-const imageminPngquant = require("imagemin-pngquant");
-const imageminGifsicle = require("imagemin-gifsicle");
-const imageminSvgo = require("imagemin-svgo");
+import fs from "fs-extra";
+import glob from "glob";
+import imagemin from "imagemin";
+import imageminMozjpeg from "imagemin-mozjpeg";
+import imageminPngquant from "imagemin-pngquant";
+import imageminGifsicle from "imagemin-gifsicle";
+import imageminSvgo from "imagemin-svgo";
 
 (async () => {
   const pattern = "**/*.{jpg,jpeg,png,gif,svg}";
   const inputPath = process.cwd() + "/input";
   const outputPath = process.cwd() + "/output";
   const options = {
-    use: [
+    plugins: [
       imageminMozjpeg({
         quality: 80,
         progressive: true,

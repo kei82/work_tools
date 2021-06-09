@@ -1,6 +1,6 @@
-const fs = require("fs-extra");
-const glob = require("glob");
-const validator = require("html-validator");
+import fs from "fs-extra";
+import glob from "glob";
+import validator from "html-validator";
 
 const outputFolder = process.cwd() + "/output";
 const outputFile = outputFolder + "/html-validate.md";

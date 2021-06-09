@@ -9,5 +9,14 @@
   "input_csv": "input.csv",
   "output_folder": "output",
   "output_filename": "{{name}}_{{device}}.jpg",
-  "file_type": "jpeg"
+  "file_type": "jpeg",
+  "pages": [
+    { "url": "https://hatenablog.com/", "filename": "file_1" },
+    { "url": "https://www.npmjs.com/", "filename": "file_2" },
+    { "url": "https://developer.mozilla.org/ja/", "filename": "file_3" },
+    { "url": "https://news.mynavi.jp/", "filename": "file_4" },
+    { "url": "https://www.afpbb.com/", "filename": "file_5" },
+    { "url": "https://developer.mozilla.org/ja/", "filename": "file_6" },
+    { "url": "https://zenn.dev/", "filename": "file_7" }
+  ]
 }

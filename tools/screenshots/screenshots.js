@@ -1,25 +1,22 @@
-const fs = require("fs-extra");
-const puppeteer = require("puppeteer-core");
-const csvParse = require("csv-parse/lib/sync");
-
-const devices = puppeteer.devices;
+import fs from "fs-extra";
+import puppeteer from "puppeteer-core";
 
 (async () => {
-  const conf = fs.readJsonSync(__dirname + "/config.json"); // 設定ファイル読み込み
-  const pages = csvParse(
-    fs.readFileSync(__dirname + "/" + conf.input_csv), // CSVファイル読み込み
-    {
-      columns: true,
-      skip_empty_lines: true,
-    }
-  );
-  fs.mkdirsSync(process.cwd() + "/" + conf.output_folder); // 出力フォルダ作成
+  /**
+   * 設定ファイル読み込み
+   */
+  const conf = fs.readJsonSync("tools/screenshots/config.json");
+
+  /**
+   * 出力フォルダ作成
+   */
+  fs.mkdirsSync(process.cwd() + "/" + conf.output_folder);
 
   const task = (function* () {
-    for (const target of pages) {
+    for (const page of conf.pages) {
       for (const viewport of conf.viewport) {
         yield {
-          ...target,
+          ...page,
           ...viewport,
         };
       }
@@ -43,14 +40,14 @@ const devices = puppeteer.devices;
         });
       }
 
-      if (emulate) await page.emulate(devices[emulate]);
+      if (emulate) await page.emulate(puppeteer.devices[emulate]);
       await page.setViewport({ width, height: 1 });
 
       const response = await page.goto(url, {
         waitUntil: "networkidle2",
       });
 
-      if (response.status() !== 200) {
+      if (/[4,5]\d{2}/.test(response.status())) {
         console.error(`Error status ${response.status()}: ${url}`);
         continue;
       }
@@ -71,21 +68,18 @@ const devices = puppeteer.devices;
     await page.close();
   };
 
-  const pageTab = 3;
+  const pageConcurrency = 3;
   const promiseList = [];
 
-  for (let index = 0; index < pageTab; index++) {
+  for (let index = 0; index < pageConcurrency; index++) {
     promiseList.push(promiseItem());
   }
 
-  await Promise.all(promiseList)
-    .then(() => {
-      console.log("\nScreenshots Completed!");
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  setTimeout(() => {}, 3000);
+  await Promise.all(promiseList).catch(console.error);
 
   await browser.close();
+
+  console.log("\nScreenshots Completed!");
+
+  setTimeout(() => {}, 3000);
 })();
