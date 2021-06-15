@@ -1,7 +1,9 @@
 {
-  "chromium_path": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-  "basic_username": "test1234",
-  "basic_password": "foo",
+  "launchOptions": {
+    "headless": false,
+    "slowMo": 50,
+    "executablePath": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+  },
   "viewport": [
     { "width": 411, "device": "SP", "emulate": "Pixel 2" },
     { "width": 1280, "device": "PC" }

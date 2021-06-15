@@ -23,22 +23,13 @@ import puppeteer from "puppeteer-core";
     }
   })();
 
-  const browser = await puppeteer.launch({
-    executablePath: conf.chromium_path,
-  });
+  const browser = await puppeteer.launch(conf.launchOptions);
 
   const promiseItem = async () => {
     const page = await browser.newPage();
 
     for (const value of task) {
       const { url, filename, width, device, emulate } = value;
-
-      if (conf.basic_username && conf.basic_password) {
-        await page.authenticate({
-          username: conf.basic_username,
-          password: conf.basic_password,
-        });
-      }
 
       if (emulate) await page.emulate(puppeteer.devices[emulate]);
       await page.setViewport({ width, height: 1 });

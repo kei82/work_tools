@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "create_har_file": "node tools/create_har_file/create_har_file.js",
+    "generate_har": "node tools/generate_har/generate_har.js",
     "html-validator": "node tools/html-validator/html-validator.js",
     "imgmin": "node tools/imgmin/imgmin.js",
     "screenshots": "node tools/screenshots/screenshots.js"
@@ -15,10 +15,10 @@
     "glob": "7.1.7",
     "html-validator": "5.1.17",
     "imagemin": "8.0.0",
-    "imagemin-gifsicle": "7.0.0",
-    "imagemin-mozjpeg": "9.0.0",
-    "imagemin-pngquant": "9.0.2",
-    "imagemin-svgo": "9.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
     "puppeteer-core": "10.0.0",
     "puppeteer-har": "1.1.2"
   }
