@@ -9,16 +9,16 @@
     "screenshots": "node tools/screenshots/screenshots.js"
   },
   "dependencies": {
-    "dayjs": "1.10.6",
-    "exceljs": "4.2.1",
+    "dayjs": "1.10.7",
+    "exceljs": "4.3.0",
     "fs-extra": "10.0.0",
     "glob": "7.1.7",
     "html-validator": "5.1.17",
     "imagemin": "8.0.1",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^9.0.0",
+    "imagemin-gifsicle": "7.0.0",
+    "imagemin-mozjpeg": "9.0.0",
+    "imagemin-pngquant": "9.0.2",
+    "imagemin-svgo": "10.0.0",
     "puppeteer-core": "10.2.0",
     "puppeteer-har": "1.1.2"
   }
