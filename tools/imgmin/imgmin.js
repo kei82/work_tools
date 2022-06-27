@@ -3,11 +3,10 @@ import glob from "glob";
 import imagemin from "imagemin";
 import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminPngquant from "imagemin-pngquant";
-import imageminGifsicle from "imagemin-gifsicle";
 import imageminSvgo from "imagemin-svgo";
 
 (async () => {
-  const pattern = "**/*.{jpg,jpeg,png,gif,svg}";
+  const pattern = "**/*.{jpg,jpeg,png,svg}";
   const inputPath = process.cwd() + "/input";
   const outputPath = process.cwd() + "/output";
   const options = {
@@ -20,10 +19,6 @@ import imageminSvgo from "imagemin-svgo";
         quality: [0.8, 0.9],
         speed: 2,
         strip: true,
-      }),
-      imageminGifsicle({
-        optimizationLevel: 1,
-        colors: 256,
       }),
       imageminSvgo({
         plugins: [
